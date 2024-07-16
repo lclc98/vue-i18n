@@ -7,6 +7,7 @@ Locale Messages syntax the below:
 ```javascript
 // As Flowtype definition, Locale Messages syntax like BNF annotation
 type LocaleMessages = { [key: Locale]: LocaleMessageObject };
+type LocaleTimestamp = { [key: Locale]: number };
 type LocaleMessageObject = { [key: Path]: LocaleMessage };
 type LocaleMessageArray = LocaleMessage[];
 type LocaleMessage = string | LocaleMessageObject | LocaleMessageArray;

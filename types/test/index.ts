@@ -38,6 +38,7 @@ const numberFormatOptions: NumberFormatOptions = {
 const i18n = new VueI18n({
   locale,
   fallbackLocale: locale,
+  timestamp: 0,
   messages: {
     [locale]: {
       [key]: value
@@ -69,6 +70,7 @@ const i18n = new VueI18n({
   silentFallbackWarn: true,
   preserveDirectiveContent: true
 })
+i18n.timestamp[locale]
 i18n.messages[locale][key]         // $ExpectType LocaleMessage
 i18n.dateTimeFormats[locale][key]  // $ExpectType DateTimeFormatOptions
 i18n.numberFormats[locale][key]    // $ExpectType NumberFormatOptions

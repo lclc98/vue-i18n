@@ -138,6 +138,7 @@ declare namespace VueI18n {
   interface I18nOptions {
     locale?: Locale;
     fallbackLocale?: FallbackLocale;
+    timestamp: number;
     messages?: LocaleMessages;
     dateTimeFormats?: DateTimeFormats;
     numberFormats?: NumberFormats;
@@ -165,6 +166,7 @@ declare namespace VueI18n {
 }
 
 export declare interface IVueI18n {
+  readonly timestamp: number;
   readonly messages: VueI18n.LocaleMessages;
   readonly dateTimeFormats: VueI18n.DateTimeFormats;
   readonly numberFormats: VueI18n.NumberFormats;
@@ -216,6 +218,7 @@ export declare interface IVueI18n {
 declare class VueI18n {
   constructor(options?: VueI18n.I18nOptions)
 
+  readonly timestamp: number;
   readonly messages: VueI18n.LocaleMessages;
   readonly dateTimeFormats: VueI18n.DateTimeFormats;
   readonly numberFormats: VueI18n.NumberFormats;
@@ -285,6 +288,7 @@ declare module 'vue/types/options' {
   interface ComponentOptions<V extends Vue> {
     i18n?: {
       messages?: VueI18n.LocaleMessages;
+      timestamp?: number
       dateTimeFormats?: VueI18n.DateTimeFormats;
       numberFormats?: VueI18n.NumberFormats;
       sharedMessages?: VueI18n.LocaleMessages;
